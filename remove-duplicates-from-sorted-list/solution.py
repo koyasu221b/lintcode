@@ -12,13 +12,15 @@ class Solution:
     """
     def deleteDuplicates(self, head):
         # write your code here
+        if head is None:
+            return head
+        import sys
+        dummy = ListNode(sys.maxint, next=head)
+        head = dummy
 
-        dummy = ListNode(0)
-        dummy.next = head
         while head is not None and head.next is not None:
             if head.val == head.next.val:
                 head.next = head.next.next
             else:
                 head = head.next
 
-        return dummy.next
