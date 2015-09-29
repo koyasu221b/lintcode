@@ -15,6 +15,7 @@ class Solution:
     def helper(self, result, sub_result, nums):
         if len(sub_result) == len(nums):
             result.append(list(sub_result))
+            return
 
         for i in range(len(nums)):
             if nums[i] in sub_result:
