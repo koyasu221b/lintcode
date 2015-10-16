@@ -36,9 +36,8 @@ class Solution:
 
         max_diff = -sys.maxint
         for i in range(n-1):
-            max_diff_1 = abs(left_max[i] - right_min[i+1])
-            max_diff_2 = abs(left_min[i] - right_max[i+1])
+            max_diff_1 = abs(left_max[i] - -1*right_min[i+1])
+            max_diff_2 = abs(-1*left_min[i] - right_max[i+1])
             max_diff = max(max_diff, max_diff_1, max_diff_2)
 
         return max_diff
-
