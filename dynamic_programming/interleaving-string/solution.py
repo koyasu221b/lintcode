@@ -14,16 +14,16 @@ class Solution:
         f = [[ False for j in range(m+1)] for i in range(n+1)]
         f[0][0] = True
 
-        for i in range(1, n):
+        for i in range(1, n+1):
             if f[i-1][0] and s1[i-1] == s3[i-1]:
                 f[i][0] = True
 
-        for j in range(1, m):
+        for j in range(1, m+1):
             if f[0][j-1] and s2[j-1] == s3[j-1]:
                 f[0][j] = True
 
-        for i in range(1,n):
-            for j in range(1, m):
+        for i in range(1,n+1):
+            for j in range(1, m+1):
                 if f[i-1][j] and  s1[i-1] == s3[i+j-1]:
                     f[i][j] = True
                 if f[i][j-1] and s2[j-1] == s3[i+j-1]:
